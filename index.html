@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>テトリステンプレ検索</title>
+  <link rel="stylesheet" href="style.min.css" type="text.css">
+</head>
+<body>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="/share/js/tracking.js"></script>
+  <script src="searcher.min.js"></script>
+  <h1>テトリステンプレ検索</h1>
+  <p class="explain">
+  タグ検索はスペース区切りで複数指定できます。-DT砲といった指定でそのタグが付いた譜は除外されます。
+  また、*TSDといった指定でTSD、STSD等がヒットします。
+  </p>
+  <p>※IE8以下では動作しません。</p>
+
+  <div class="search-row clear">
+    <div class="search-label">タグ検索：</div>
+    <div class="search-input">
+      <input id="word" type="text">
+      <input id="search-btn" type="button" value="検索">
+    </div>
+  </div>
+
+  <div id="search-result-area">
+    <p><span id="total-count"></span>&nbsp;&nbsp;<span id="count"></span></p>
+    <ul id="search-result"></ul>
+  </div>
+</body>
+</html>
