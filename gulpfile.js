@@ -8,12 +8,9 @@ var sass = require('gulp-sass');
 var concat = require('gulp-concat')
 var minifyCss = require('gulp-minify-css')
 var rename = require('gulp-rename')
-//var glob = require('glob');
 var plumber = require('gulp-plumber');
 
 gulp.task('browserify', function () {
-//  var scriptFiles = glob.sync('./scripts/**/script.js');
-
   return browserify({
       debug: true,
       entries: ['scripts/main.js'],
@@ -23,7 +20,7 @@ gulp.task('browserify', function () {
     .pipe(sourcemaps.init({
       loadMaps: true,
     }))
-    //    .pipe(uglify())
+    .pipe(uglify())
     .pipe(sourcemaps.write())
     .pipe(rename('searcher.min.js'))
     .pipe(gulp.dest('./dist/'));
