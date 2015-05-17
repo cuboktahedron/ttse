@@ -9,12 +9,14 @@ var concat = require('gulp-concat')
 var minifyCss = require('gulp-minify-css')
 var rename = require('gulp-rename')
 var plumber = require('gulp-plumber');
+var handleErrors = require('./scripts/lib/handleErrors');
 
 gulp.task('browserify', function () {
   return browserify({
       debug: true,
       entries: ['scripts/main.js'],
     }).bundle()
+    .on('error', handleErrors)
     .pipe(source('searhcer.js'))
     .pipe(buffer())
     .pipe(sourcemaps.init({
