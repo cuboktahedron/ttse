@@ -20,7 +20,7 @@ gulp.task('browserify', function () {
     .pipe(sourcemaps.init({
       loadMaps: true,
     }))
-    .pipe(uglify())
+//    .pipe(uglify())
     .pipe(sourcemaps.write())
     .pipe(rename('searcher.min.js'))
     .pipe(gulp.dest('./dist/'));

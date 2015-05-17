@@ -1,6 +1,10 @@
 (function() {
+  'use strict';
+
   var $ = require('jquery');
+  var config = require('./config');
   var records = require('./data').records;
+  var search = require('./search');
 
   // 各テキストボックスのEnter押下で検索押下のイベント登録
   $('input[type="text"]').keypress(function(e) {
