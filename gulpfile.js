@@ -1,14 +1,9 @@
 var gulp = require('gulp');
+
+var $ = require('gulp-load-plugins')();
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
-var sourcemaps = require('gulp-sourcemaps');
 var buffer = require('vinyl-buffer');
-var uglify = require('gulp-uglify');
-var sass = require('gulp-sass');
-var concat = require('gulp-concat')
-var minifyCss = require('gulp-minify-css')
-var rename = require('gulp-rename')
-var plumber = require('gulp-plumber');
 var handleErrors = require('./scripts/lib/handleErrors');
 
 gulp.task('browserify', function () {
@@ -19,22 +14,22 @@ gulp.task('browserify', function () {
     .on('error', handleErrors)
     .pipe(source('searhcer.js'))
     .pipe(buffer())
-    .pipe(sourcemaps.init({
+    .pipe($.sourcemaps.init({
       loadMaps: true,
     }))
 //    .pipe(uglify())
-    .pipe(sourcemaps.write())
-    .pipe(rename('searcher.min.js'))
+    .pipe($.sourcemaps.write())
+    .pipe($.rename('searcher.min.js'))
     .pipe(gulp.dest('./dist/'));
   });
 
 gulp.task('sass', function () {
   gulp.src('./styles/*.scss')
-  .pipe(plumber())
-  .pipe(sass())
-  .pipe(concat('style.css'))
-  .pipe(minifyCss())
-  .pipe(rename('style.min.css'))
+  .pipe($.plumber())
+  .pipe($.sass())
+  .pipe($.concat('style.css'))
+  .pipe($.minifyCss())
+  .pipe($.rename('style.min.css'))
   .pipe(gulp.dest('./dist/'));
 });
 
