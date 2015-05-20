@@ -33,6 +33,11 @@ gulp.task('sass', function () {
   .pipe(gulp.dest('./dist/'));
 });
 
+gulp.task('test', function() {
+  return gulp.src('./scripts/test/*.js')
+    .pipe($.jasmine());
+});
+
 gulp.task('watch', function() {
   gulp.watch('./styles/**/*.scss', ['sass']);
   gulp.watch('./scripts/**/*', ['browserify']);
