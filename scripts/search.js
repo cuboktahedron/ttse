@@ -1,8 +1,7 @@
-module.exports = function(word) {
+module.exports = function(records, word) {
   'use strict';
 
   var $ = require('jquery');
-  var records = require('./data').records;
 
   var escapeRegExpExceptForAstarisk = function(str) {
     return str.replace(/([.+?^=!:${}()|[\]\/\\])/g, "\\$1");

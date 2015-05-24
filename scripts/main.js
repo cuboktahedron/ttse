@@ -3,7 +3,6 @@
 
   var $ = require('jquery');
   var config = require('./config');
-  var records = require('./data').records;
   var search = require('./search');
 
   // 各テキストボックスのEnter押下で検索押下のイベント登録
@@ -18,7 +17,7 @@
   // 検索ボタン押下処理
   $('#search-btn').click(function() {
     var $searchResult = $('#search-result').empty();
-    var searchResult = search($('#word').val());
+    var searchResult = search(records, $('#word').val());
 
     $.each(searchResult, function(i, record) {
       var recordId = ('000000000000' + record.id).slice(-10);
