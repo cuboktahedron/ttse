@@ -25,7 +25,7 @@
       $.each(record.tags, function(i, tag) {
         tags += ('<div class="tag">' + tag + '</div>');
       });
-      $searchResult.append('<li><div class="link-block"><a href="http://www.cuboktahedron.sakura.ne.jp/tetsimu/?' + record.record + '" target="_blank">' + recordId + '</a></div>' + tags + '</li>');
+      $searchResult.append('<li><div class="link-block"><a href="' + config.site + '?' + record.record + '" target="_blank">' + recordId + '</a></div>' + tags + '</li>');
     });
     $('#count').text('マッチ件数：' + searchResult.length + '件');
   });
