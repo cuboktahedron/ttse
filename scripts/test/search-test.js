@@ -1,4 +1,4 @@
-describe("Word", function() {
+describe("Word Criteria", function() {
   'use strict';
 
   var searcher = require('../search');
@@ -74,6 +74,14 @@ describe("Word", function() {
 
   it("should multi byte characters", function() {
     expect(['4']).toEqual(ids(searcher(records, 'ほげ')));
+  });
+
+  it("should matches any single character", function() {
+    expect(['1', '4']).toEqual(ids(searcher(records, '_o_e')));
+  });
+
+  it("should excludes matching records with '_'", function() {
+    expect(['2', '3']).toEqual(ids(searcher(records, '-_o_e*')));
   });
 });
 

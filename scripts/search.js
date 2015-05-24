@@ -29,6 +29,7 @@ module.exports = function(records, word) {
   });
   plusTags = plusTags.map(function(tag) {
     var pattern = escapeRegExpExceptForAstarisk(tag).replace(/\*/g, '.*');
+    pattern = pattern.replace(/_/g, '.');
     return new RegExp('^' + pattern + '$', 'i');
   });
 
@@ -42,6 +43,7 @@ module.exports = function(records, word) {
   minusTags = minusTags.map(function(tag) {
     tag = tag.substring(1);
     var pattern = escapeRegExpExceptForAstarisk(tag).replace(/\*/g, '.*');
+    pattern = pattern.replace(/_/g, '.');
     return new RegExp('^' + pattern + '$', 'i');
   });
 
