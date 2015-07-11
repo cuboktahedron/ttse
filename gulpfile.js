@@ -18,7 +18,7 @@ gulp.task('browserify', function () {
       loadMaps: true,
     }))
     .pipe($.uglify())
-    .pipe($.sourcemaps.write())
+//    .pipe($.sourcemaps.write())
     .pipe($.rename('searcher.min.js'))
     .pipe(gulp.dest('./dist/'));
   });
