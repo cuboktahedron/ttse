@@ -1,4 +1,4 @@
 module.exports = {
-  site: 'http://www.cuboktahedron.sakura.ne.jp/tetsimu/'
+  site: 'https://cuboktahedron.github.io/q/tetsimu/'
 };
 

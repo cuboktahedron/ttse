@@ -4,7 +4,7 @@
 ## どんなツールか
 テトリス譜を管理して検索できます。
 
-デモは[こちら](http://www.cuboktahedron.sakura.ne.jp/ttse/)
+デモは[こちら](https://cuboktahedron.github.io/q/ttse/)
 
 ## 動作環境
 - IE9以上
